@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory-100 text-brown-500 font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-champagne-200 text-brown-500;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ivory-200;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-champagne-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-champagne-400;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #C29A4E 0%, #D4AF6A 50%, #EFD49E 100%);
+  }
+
+  .text-gradient-brown {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #2A1F15 0%, #4A3525 50%, #6B4E35 100%);
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-champagne-100/50;
+  }
+
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D4AF6A, transparent);
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #C29A4E 0%, #EFD49E 50%, #C29A4E 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .wedding-section {
+    @apply relative px-6 py-20 md:py-28 lg:px-12;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl text-brown-500 text-center;
+  }
+
+  .section-label {
+    @apply font-script text-2xl md:text-3xl text-champagne-400 text-center block mb-2;
+  }
+
+  .ornament-line {
+    @apply flex items-center justify-center gap-4 my-6;
+  }
+
+  .ornament-line::before,
+  .ornament-line::after {
+    content: '';
+    @apply h-px w-16 md:w-24;
+    background: linear-gradient(90deg, transparent, #D4AF6A);
+  }
+
+  .ornament-line::after {
+    background: linear-gradient(270deg, transparent, #D4AF6A);
+  }
+}
+
+/* Masonry layout */
+.masonry {
+  columns: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* Petal animation */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: fixed;
+  top: -10vh;
+  pointer-events: none;
+  z-index: 30;
+  animation: petalFall linear infinite;
+}
