@@ -162,8 +162,10 @@ gallery: [
   venue: {
     name: 'VSS Mangala Mahal',
     address: 'VSS mangala mahal, 4X28+9QP, Pandamangalam, Tamil Nadu 637208',
-    mapsUrl: 'https://maps.app.goo.gl/QBSZc9gxn1eVccJa9',
-    mapsLink: 'https://www.google.com/maps/dir/?api=1&destination=11.1028383,77.965299',
+    mapsUrl:
+      'https://www.openstreetmap.org/export/embed.html?bbox=77.96%2C11.09%2C77.98%2C11.11&layer=mapnik&marker=11.1009737%2C77.9669576',
+    mapsLink:
+      'https://www.google.com/maps/dir/?api=1&destination=11.1028383,77.965299&travelmode=driving&dir_action=navigate',
     description: 'Nestled on the shores of Lake Pichola, The Leela Palace Udaipur offers a breathtaking backdrop of the Aravalli Mountains and the shimmering lake — the perfect setting for our celebration.',
     highlights: [
       'Grand ballroom and garden spaces',

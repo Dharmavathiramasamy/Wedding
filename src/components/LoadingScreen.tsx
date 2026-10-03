@@ -59,7 +59,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
               ))}
             </motion.g>
             <text x="60" y="66" textAnchor="middle" className="fill-brown-400 font-script text-2xl">
-              A&P
+              P&J
             </text>
           </svg>
         </motion.div>

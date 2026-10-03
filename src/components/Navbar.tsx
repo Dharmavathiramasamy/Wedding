@@ -53,7 +53,7 @@ export default function Navbar() {
             <span className={`font-script text-2xl md:text-3xl transition-colors ${
               scrolled ? 'text-champagne-400' : 'text-white'
             }`}>
-              A <span className="text-champagne-300">&amp;</span> P
+              P <span className="text-champagne-300">&amp;</span> J
             </span>
           </button>
 
