@@ -75,12 +75,6 @@ export default function Navbar() {
                 />
               </button>
             ))}
-            <button
-              onClick={() => handleNavClick('#rsvp')}
-              className="px-5 py-2 rounded-full bg-champagne-300 text-white text-sm font-sans hover:bg-champagne-400 transition-colors shadow-gold"
-            >
-              RSVP
-            </button>
           </div>
 
           {/* Mobile hamburger */}
@@ -122,15 +116,6 @@ export default function Navbar() {
                   {item.label}
                 </motion.button>
               ))}
-              <motion.button
-                onClick={() => handleNavClick('#rsvp')}
-                className="px-8 py-3 rounded-full bg-champagne-300 text-white font-sans mt-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + weddingData.nav.length * 0.08 }}
-              >
-                RSVP Now
-              </motion.button>
             </motion.div>
           </motion.div>
         )}

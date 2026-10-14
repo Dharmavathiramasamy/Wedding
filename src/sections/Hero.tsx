@@ -8,10 +8,9 @@ export default function Hero() {
   const { couple, wedding, hero } = weddingData;
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-    >
+    <section id="hero" className="relative bg-ivory-100">
+      {/* Photo area */}
+      <div className="relative min-h-[92vh] flex flex-col items-center justify-center overflow-hidden pb-28 md:pb-36">
       {/* Background photo */}
       <div className="absolute inset-0 z-0">
         <img
@@ -19,7 +18,8 @@ export default function Hero() {
           alt="Couple on their wedding day"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brown-600/60 via-brown-500/40 to-brown-600/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brown-600/60 via-brown-500/30 to-brown-600/20" />
+        <div className="absolute inset-x-0 bottom-0 h-48 md:h-64 bg-gradient-to-b from-transparent via-ivory-100/70 to-ivory-100" />
       </div>
 
       {/* Decorative ornaments */}
@@ -111,28 +111,19 @@ export default function Hero() {
         </motion.p>
       </div>
 
-      {/* Countdown */}
+      </div>
+
+      {/* Countdown sits on the fade so the photo and the next section meet cleanly */}
       <motion.div
-        className="relative z-10 mt-10 md:mt-12"
+        className="relative z-10 -mt-24 md:-mt-28 pb-6 md:pb-10 px-6"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.7 }}
       >
-        <p className="text-center text-champagne-200 text-xs uppercase tracking-[0.3em] mb-4 font-sans">
+        <p className="text-center text-champagne-400 text-xs uppercase tracking-[0.3em] mb-4 font-sans">
           {wedding.daysText}
         </p>
         <Countdown targetDate={wedding.date} />
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-champagne-200/50 flex items-start justify-center p-1.5">
-          <div className="w-1 h-2 rounded-full bg-champagne-200" />
-        </div>
       </motion.div>
     </section>
   );

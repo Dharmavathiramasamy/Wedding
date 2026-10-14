@@ -75,7 +75,7 @@ export const weddingData = {
     {
       date: '2026',
       title: 'Forever Begins',
-      description: 'Surrounded by family and friends in the city of lakes, we begin our greatest adventure — a lifetime of love, laughter, and togetherness.',
+      description: 'Surrounded by family, friends, and the divine blessings of Lord Venkateswara at Pandamangalam, we begin our greatest adventure — a lifetime of love, laughter, and togetherness.',
       icon: 'infinity',
     },
   ] as StoryEntry[],
@@ -162,40 +162,32 @@ gallery: [
   venue: {
     name: 'VSS Mangala Mahal',
     address: 'VSS mangala mahal, 4X28+9QP, Pandamangalam, Tamil Nadu 637208',
+    description:
+      'The engagement celebration is held at VSS Mangala Mahal in Pandamangalam, a short drive from the wedding temple in Paramathi Velur.',
+    highlights: [
+      
+    ],
     mapsUrl:
       'https://www.openstreetmap.org/export/embed.html?bbox=77.96%2C11.09%2C77.98%2C11.11&layer=mapnik&marker=11.1009737%2C77.9669576',
     mapsLink:
-      'https://www.google.com/maps/dir/?api=1&destination=11.1028383,77.965299&travelmode=driving&dir_action=navigate',
-    description: 'Nestled on the shores of Lake Pichola, The Leela Palace Udaipur offers a breathtaking backdrop of the Aravalli Mountains and the shimmering lake — the perfect setting for our celebration.',
-    highlights: [
-      'Grand ballroom and garden spaces',
-      'Valet parking available for all guests',
-    ],
+      'https://www.google.com/maps/dir/11.9715748,78.4527868/VSS+mangala+mahal,+4X28%2B9QP,+Pandamangalam,+Tamil+Nadu+637208/@11.5398927,77.5498264,9z/data=!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3babd52cb9bac033:0x863f41fd1895efd5!2m2!1d77.9670579!2d11.1009685!3e0!11m1!6b1?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D',
     
   },
-  rsvp: {
-    whatsappNumber: '9344418426',
-    whatsappMessage: 'Hello! I would like to RSVP for Purushothaman & Jansi\'s wedding.',
-    email: 'dharmavathiramasamy@gmail.com',
-    deadline: 'November 11, 2026',
-  },
+ 
   message: {
     quote: 'In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.',
     author: 'Maya Angelou',
     body: 'We are deeply grateful for your presence in our lives and would be honored to have you join us as we take this sacred step together. Your blessings mean the world to us, and we cannot wait to celebrate this joyous occasion surrounded by the people we love most.',
   },
   music: {
-    // Using a royalty-free instrumental track URL
-    src: 'https://cdn.pixabay.com/audio/2022/10/18/audio_34501665c2.mp3',
-    title: 'Shehnai Melody',
+    src: '/music/wedding.mp3',
+    title: 'Sitar & Tabla',
+    credit: 'Ashok Ayengar, CC BY-SA 4.0',
   },
   nav: [
     { label: 'Home', href: '#hero' },
-    { label: 'Story', href: '#story' },
     { label: 'Events', href: '#events' },
-    { label: 'Gallery', href: '#gallery' },
     { label: 'Venue', href: '#venue' },
-    { label: 'RSVP', href: '#rsvp' },
   ],
 };
 

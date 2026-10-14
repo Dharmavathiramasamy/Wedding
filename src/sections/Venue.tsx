@@ -29,11 +29,13 @@ export default function Venue() {
             <MapPin className="w-5 h-5 text-champagne-400 flex-shrink-0 mt-0.5" />
             <span className="font-sans text-sm">{venue.address}</span>
           </div>
-          <p className="font-serif text-brown-400 leading-relaxed mb-6">{venue.description}</p>
+          {venue.description && (
+            <p className="font-serif text-brown-400 leading-relaxed mb-6">{venue.description}</p>
+          )}
 
           {/* Highlights */}
           <ul className="space-y-3 mb-8">
-            {venue.highlights.map((highlight, i) => (
+            {(venue.highlights ?? []).map((highlight, i) => (
               <motion.li
                 key={i}
                 className="flex items-center gap-3 text-brown-400"

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sun, Flower2, Flame, Sparkles, Clock, MapPin, Shirt } from 'lucide-react';
+import { Sun, Flower2, Flame, Sparkles, Clock, MapPin, Shirt, Gem, Landmark } from 'lucide-react';
 import { weddingData } from '@/data/weddingData';
 import { DividerOrnament } from '@/components/Ornaments';
 
@@ -8,6 +8,8 @@ const iconMap: Record<string, typeof Sun> = {
   flower: Flower2,
   fire: Flame,
   sparkles: Sparkles,
+  ring: Gem,
+  temple: Landmark,
 };
 
 export default function Events() {

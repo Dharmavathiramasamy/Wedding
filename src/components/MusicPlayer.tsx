@@ -15,19 +15,31 @@ export default function MusicPlayer() {
 
     audio.volume = 0.35;
     audio.loop = true;
+
+    const start = () => {
+      if (!audio.paused) return;
+      audio.play().then(() => {
+        setIsPlaying(true);
+        setUserInteracted(true);
+        window.removeEventListener('pointerdown', start);
+      }).catch(() => {});
+    };
+
+    window.addEventListener('pointerdown', start);
+    return () => window.removeEventListener('pointerdown', start);
   }, []);
 
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (!userInteracted) setUserInteracted(true);
+    setUserInteracted(true);
 
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
     } else {
-      audio.play().then(() => setIsPlaying(true)).catch(() => {});
+      audio.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
     }
   };
 
@@ -73,7 +85,10 @@ export default function MusicPlayer() {
             exit={{ opacity: 0, x: 10 }}
           >
             <Music className="w-4 h-4 text-champagne-400 animate-pulse" />
-            <span className="text-xs text-brown-400 font-sans">{weddingData.music.title}</span>
+            <span className="text-xs text-brown-400 font-sans">
+              {weddingData.music.title}
+              <span className="text-brown-300"> · {weddingData.music.credit}</span>
+            </span>
           </motion.div>
         )}
 
